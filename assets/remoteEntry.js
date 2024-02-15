@@ -1,0 +1,7 @@
+import{_ as l}from"./preload-helper-hlDPvxQM.js";const d=new Set(["Module","__esModule","default","_export_sfc"]);let i={"./MainBanner":()=>(f([],!1,"./MainBanner"),h("./__federation_expose_MainBanner-IgGk9CVt.js").then(e=>Object.keys(e).every(n=>d.has(n))?()=>e.default:()=>e))};const c={},f=(e,n,_)=>{const o=import.meta.url;if(typeof o>"u"){console.warn('The remote style takes effect only when the build.target option in the vite.config.ts file is higher than that of "es2020".');return}const a=o.substring(0,o.lastIndexOf("remoteEntry.js"));e.forEach(s=>{const t=a+s;if(!(t in c))if(c[t]=!0,n){const r="css__bannerApp__"+_;window[r]==null&&(window[r]=[]),window[r].push(t)}else{const r=document.head.appendChild(document.createElement("link"));r.href=t,r.rel="stylesheet"}})};async function h(e){return l(()=>import(e),__vite__mapDeps([]))}const p=e=>{if(!i[e])throw new Error("Can not find remote module "+e);return i[e]()},m=e=>{globalThis.__federation_shared__=globalThis.__federation_shared__||{},Object.entries(e).forEach(([n,_])=>{const o=Object.keys(_)[0],a=Object.values(_)[0],s=a.scope||"default";globalThis.__federation_shared__[s]=globalThis.__federation_shared__[s]||{};const t=globalThis.__federation_shared__[s];(t[n]=t[n]||{})[o]=a})};export{f as dynamicLoadingCss,p as get,m as init};
+function __vite__mapDeps(indexes) {
+  if (!__vite__mapDeps.viteFileDeps) {
+    __vite__mapDeps.viteFileDeps = []
+  }
+  return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
+}
