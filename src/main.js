@@ -253,12 +253,9 @@ function onDocumentMouseMove(event) {
     document.body.style.cursor = 'default';
     if (hoveredObject) {
       hoveredObject.scale.copy(originalScale);
-      hoveredObject = null; // Reset the currently hovered object
+      hoveredObject = null;
     }
   }
-
-  // camera.position.set(((mouse.x+1)/2*6)-(6), 0, (mouse.x+1)*3);
-  // camera.rotation.y = -Math.PI/3 + (mouse.x*Math.PI/4);
 
 }
 
