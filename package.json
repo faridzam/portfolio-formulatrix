@@ -8,6 +8,7 @@
     "dev": "vite --port 3001 --strictPort",
     "build": "vite build",
     "preview": "vite preview --port 3001 --strictPort",
+    "start": "vite preview --port 80 --strictPort",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "faridzam",
