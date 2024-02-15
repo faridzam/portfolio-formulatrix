@@ -9,11 +9,13 @@
     "build": "vite build",
     "preview": "vite preview --port 3001 --strictPort",
     "start": "vite preview",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "faridzam",
   "license": "ISC",
   "dependencies": {
+    "gh-pages": "^6.1.1",
     "three": "^0.160.1"
   },
   "devDependencies": {
