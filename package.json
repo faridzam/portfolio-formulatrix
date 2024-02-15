@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-main-banner",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "vite --port 3001 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --port 3001 --strictPort",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "faridzam",
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.160.1"
+  },
+  "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.3.4",
+    "vite": "^5.0.12"
+  }
+}
