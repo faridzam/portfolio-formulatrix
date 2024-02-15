@@ -1,1 +1,1 @@
-web: npm run build && npm run start
+web: vite preview --port 3000
