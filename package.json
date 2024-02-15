@@ -6,10 +6,9 @@
   "main": "src/main.js",
   "scripts": {
     "dev": "vite --port 3001 --strictPort",
-    "build": "VITE_BASE_URL=https://portfolio-formulatrix-f6a8dafa2de2.herokuapp.com vite build",
+    "build": "VITE_BASE_URL=https://faridzam.github.io/portfolio-formulatrix vite build",
     "preview": "vite preview --port 3001 --strictPort",
-    "start": "VITE_BASE_URL=https://portfolio-formulatrix-f6a8dafa2de2.herokuapp.com vite preview",
-    "deploy": "VITE_BASE_URL=https://portfolio-formulatrix-f6a8dafa2de2.herokuapp.com gh-pages -d dist",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "faridzam",

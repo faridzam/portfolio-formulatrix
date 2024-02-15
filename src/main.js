@@ -10,6 +10,7 @@ import { particles } from './objects/randomParticle';
 
 let camera, scene, renderer, sizes, composer;
 let mouse;
+let originalScale, hoveredObject;
 
 init();
 animate();
@@ -43,6 +44,45 @@ function init() {
   renderer.setSize( sizes.width, sizes.height );
   var container = document.querySelector('.main-banner-container')
   container.appendChild( renderer.domElement );
+
+  // lokapos
+  const geometryProjects = new THREE.PlaneGeometry(3.2, 1.8);
+
+  const textureLokaposAdmin1 = new THREE.TextureLoader().load('/images/lokapos-admin/admin_panel_login.jpeg');
+  const materialLokaposAdmin1 = new THREE.MeshBasicMaterial({map:textureLokaposAdmin1});
+  const planeLokaposAdmin1 = new THREE.Mesh( geometryProjects, materialLokaposAdmin1 );
+  scene.add(planeLokaposAdmin1);
+  planeLokaposAdmin1.position.set(3, -1, -2);
+  planeLokaposAdmin1.name = 'planeLokaposAdmin1';
+  
+  const textureLokaposAdmin2 = new THREE.TextureLoader().load('/images/lokapos-admin/admin_panel_dashboard.jpeg');
+  const materialLokaposAdmin2 = new THREE.MeshBasicMaterial({map:textureLokaposAdmin2});
+  const planeLokaposAdmin2 = new THREE.Mesh( geometryProjects, materialLokaposAdmin2 );
+  scene.add(planeLokaposAdmin2);
+  planeLokaposAdmin2.position.set(3+3.5, -1, -2);
+  planeLokaposAdmin2.name = 'planeLokaposAdmin2';
+
+  const textureLokapos1 = new THREE.TextureLoader().load('/images/lokapos/pos_login.jpeg');
+  const materialLokapos1 = new THREE.MeshBasicMaterial({map:textureLokapos1});
+  const planeLokapos1 = new THREE.Mesh( geometryProjects, materialLokapos1 );
+  scene.add(planeLokapos1);
+  planeLokapos1.position.set(3, -3, -2);
+  planeLokapos1.name = 'planeLokapos1';
+  
+  const textureLokapos2 = new THREE.TextureLoader().load('/images/lokapos/pos_input_deposit.jpeg');
+  const materialLokapos2 = new THREE.MeshBasicMaterial({map:textureLokapos2});
+  const planeLokapos2 = new THREE.Mesh( geometryProjects, materialLokapos2 );
+  scene.add(planeLokapos2);
+  planeLokapos2.position.set(3+3.5, -3, -2);
+  planeLokapos2.name = 'planeLokapos2';
+  
+  const textureLokapos3 = new THREE.TextureLoader().load('/images/lokapos/pos_home.jpeg');
+  const materialLokapos3 = new THREE.MeshBasicMaterial({map:textureLokapos3});
+  const planeLokapos3 = new THREE.Mesh( geometryProjects, materialLokapos3 );
+  scene.add(planeLokapos3);
+  planeLokapos3.position.set(3+7, -3, -2);
+  planeLokapos3.name = 'planeLokapos3';
+  
   
   // object (cube)
   // const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
@@ -168,6 +208,54 @@ function onDocumentMouseMove(event) {
     rotationSpeed
   );
   cameraRotation.slerp(targetQuaternion, 0.1);
+
+  // Update the raycaster with the mouse position
+  var raycaster = new THREE.Raycaster();
+  raycaster.setFromCamera( mouse, camera );
+
+  // Step 3: Perform raycasting and check for intersections with objects by name
+  const intersects = raycaster.intersectObjects(scene.children, true);
+
+  // Filter the intersections based on object names
+  const intersectedObjects = intersects.filter(intersect => [
+    'planeLokaposAdmin1',
+    'planeLokaposAdmin2',
+    'planeLokapos1',
+    'planeLokapos2',
+    'planeLokapos3',
+  ].includes(intersect.object.name));
+
+  if (intersectedObjects.length > 0) {
+    // Get the first intersected object (closest to the camera)
+    const intersectedObject = intersectedObjects[0].object;
+    // Do something with the intersected object
+    if (!originalScale) {
+      originalScale = intersectedObject.scale.clone(); // Store the original scale
+    }
+    document.body.style.cursor = 'pointer';
+
+    if (hoveredObject !== intersectedObject) {
+        // Reset the scale of the previously hovered object (if exists)
+        if (hoveredObject) {
+            hoveredObject.scale.copy(originalScale);
+        }
+
+        // Store the original scale of the intersected object
+        originalScale = intersectedObject.scale.clone();
+
+        // Scale the intersected object
+        intersectedObject.scale.set(originalScale.x * 1.2, originalScale.y * 1.2, originalScale.z * 1.2);
+
+        // Update the currently hovered object
+        hoveredObject = intersectedObject;
+    }
+  } else {
+    document.body.style.cursor = 'default';
+    if (hoveredObject) {
+      hoveredObject.scale.copy(originalScale);
+      hoveredObject = null; // Reset the currently hovered object
+    }
+  }
 
   // camera.position.set(((mouse.x+1)/2*6)-(6), 0, (mouse.x+1)*3);
   // camera.rotation.y = -Math.PI/3 + (mouse.x*Math.PI/4);
