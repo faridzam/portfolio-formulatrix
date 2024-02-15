@@ -312,6 +312,7 @@ function init() {
   
   // event listener
   document.addEventListener('mousemove', onDocumentMouseMove);
+  document.addEventListener('click', onObjectClick);
   window.addEventListener('resize', onWindowResize);
 
   // postprocessing
@@ -329,6 +330,13 @@ function init() {
   // controls.maxDistance = 500;
   // controls.maxPolarAngle = Math.PI / 2;
 
+}
+
+function onObjectClick(event){
+  if (hoveredObject) {
+    // console.log(hoveredObject)
+    window.open(hoveredObject.material.map.source.data.currentSrc, '_blank').focus();
+  }
 }
 
 // var lastMove = Date.now();
