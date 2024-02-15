@@ -25,7 +25,7 @@ function init() {
   scene = new THREE.Scene();
   // const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
   camera = new THREE.PerspectiveCamera( 75, sizes.width / sizes.height, 0.1, 1000 );
-  camera.position.z = 6;
+  camera.position.z = 15;
   scene.background = new THREE.Color(0x000000)
   // scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
   
@@ -45,43 +45,60 @@ function init() {
   var container = document.querySelector('.main-banner-container')
   container.appendChild( renderer.domElement );
 
+  const geometryProjects = new THREE.PlaneGeometry(16/4, 9/4);
+  
   // lokapos
-  const geometryProjects = new THREE.PlaneGeometry(3.2, 1.8);
-
   const textureLokaposAdmin1 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/lokapos-admin/admin_panel_login.jpeg`);
   const materialLokaposAdmin1 = new THREE.MeshBasicMaterial({map:textureLokaposAdmin1});
   const planeLokaposAdmin1 = new THREE.Mesh( geometryProjects, materialLokaposAdmin1 );
   scene.add(planeLokaposAdmin1);
-  planeLokaposAdmin1.position.set(3, -1, -2);
+  planeLokaposAdmin1.position.set(0, 4, 0);
   planeLokaposAdmin1.name = 'planeLokaposAdmin1';
   
   const textureLokaposAdmin2 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/lokapos-admin/admin_panel_dashboard.jpeg`);
   const materialLokaposAdmin2 = new THREE.MeshBasicMaterial({map:textureLokaposAdmin2});
   const planeLokaposAdmin2 = new THREE.Mesh( geometryProjects, materialLokaposAdmin2 );
   scene.add(planeLokaposAdmin2);
-  planeLokaposAdmin2.position.set(3+3.5, -1, -2);
+  planeLokaposAdmin2.position.set(0, 1.5, 0);
   planeLokaposAdmin2.name = 'planeLokaposAdmin2';
 
   const textureLokapos1 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/lokapos/pos_login.jpeg`);
   const materialLokapos1 = new THREE.MeshBasicMaterial({map:textureLokapos1});
   const planeLokapos1 = new THREE.Mesh( geometryProjects, materialLokapos1 );
   scene.add(planeLokapos1);
-  planeLokapos1.position.set(3, -3, -2);
+  planeLokapos1.position.set(0, -1, 0);
   planeLokapos1.name = 'planeLokapos1';
   
   const textureLokapos2 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/lokapos/pos_input_deposit.jpeg`);
   const materialLokapos2 = new THREE.MeshBasicMaterial({map:textureLokapos2});
   const planeLokapos2 = new THREE.Mesh( geometryProjects, materialLokapos2 );
   scene.add(planeLokapos2);
-  planeLokapos2.position.set(3+3.5, -3, -2);
+  planeLokapos2.position.set(0, -3.5, 0);
   planeLokapos2.name = 'planeLokapos2';
   
   const textureLokapos3 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/lokapos/pos_home.jpeg`);
   const materialLokapos3 = new THREE.MeshBasicMaterial({map:textureLokapos3});
   const planeLokapos3 = new THREE.Mesh( geometryProjects, materialLokapos3 );
   scene.add(planeLokapos3);
-  planeLokapos3.position.set(3+7, -3, -2);
+  planeLokapos3.position.set(0, -6, 0);
   planeLokapos3.name = 'planeLokapos3';
+
+  // qlola
+  const geometryQlola1 = new THREE.PlaneGeometry(4, 5.4);
+  const textureQlola1 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/qlola/qlola-login.jpg`);
+  const materialQlola1 = new THREE.MeshBasicMaterial({map:textureQlola1});
+  const planeQlola1 = new THREE.Mesh( geometryQlola1, materialQlola1 );
+  scene.add(planeQlola1);
+  planeQlola1.position.set(-4.5, 4, 0);
+  planeQlola1.name = 'planeQlola1';
+  
+  const geometryQlola2 = new THREE.PlaneGeometry(4, 6.55);
+  const textureQlola2 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/qlola/giro-online.jpg`);
+  const materialQlola2 = new THREE.MeshBasicMaterial({map:textureQlola2});
+  const planeQlola2 = new THREE.Mesh( geometryQlola2, materialQlola2 );
+  scene.add(planeQlola2);
+  planeQlola2.position.set(-4.5, -2.2, 0);
+  planeQlola2.name = 'planeQlola2';
   
   
   // object (cube)
@@ -130,7 +147,7 @@ function init() {
       objLoader.load(`${import.meta.env.VITE_BASE_URL}/objects/Moon_2K.obj`, function (object) {
           // Add the loaded object to the scene
           object.name = 'moon';
-          object.position.set(0,0,0);
+          object.position.set(0,8,0);
           object.scale.set(1, 1, 1)
           scene.add(object);
       });
@@ -158,7 +175,27 @@ function init() {
     const textMaterial = new THREE.MeshBasicMaterial({color: 0xFFFFFF});
     const textMesh = new THREE.Mesh(textGeometry, textMaterial);
 
-    textMesh.position.set(0, 50, -100);
+    textMesh.position.set(-100, 70, -100);
+
+    scene.add( textMesh );
+  });
+  fontLoader.load(`${import.meta.env.VITE_BASE_URL}/fonts/Poppins_Regular.json`, function (font) {
+    const textGeometry = new TextGeometry('Portfolio for formulatrix', {
+      font: font,
+      size: 3,
+      height: 0,
+      curveSegments: 12,
+      bevelEnabled: true,
+      bevelThickness: 0,
+      bevelSize: 0,
+      bevelOffset: 0,
+      bevelSegments: 0,
+    });
+    textGeometry.center();
+    const textMaterial = new THREE.MeshBasicMaterial({color: 0xFFFFFF});
+    const textMesh = new THREE.Mesh(textGeometry, textMaterial);
+
+    textMesh.position.set(-108, 60, -100);
 
     scene.add( textMesh );
   });
@@ -185,7 +222,7 @@ function init() {
 }
 
 // var lastMove = Date.now();
-var cameraPositionTarget = new THREE.Vector3(0,0,6);
+var cameraPositionTarget = new THREE.Vector3(0,0,15);
 var cameraRotation = new THREE.Quaternion();
 var targetQuaternion = new THREE.Quaternion();
 function onDocumentMouseMove(event) {
@@ -200,14 +237,16 @@ function onDocumentMouseMove(event) {
   mouse.x = (event.clientX / sizes.width) * 2 - 1;
   mouse.y = -(event.clientY / sizes.height) * 2 + 1;
 
-  cameraPositionTarget.set(((mouse.x+1)*6)-(6), 0, 6);
+  cameraPositionTarget.set(((mouse.x+1)*6)-(6), 0, 15);
 
-  const rotationSpeed = 0.5;
-  targetQuaternion.setFromAxisAngle(
-    new THREE.Vector3(0, mouse.x, 0),
-    rotationSpeed
-  );
-  cameraRotation.slerp(targetQuaternion, 0.1);
+  // cameraPositionTarget.set(((mouse.x+1)*6)-(6), 0, 15);
+
+  // const rotationSpeed = 0.5;
+  // targetQuaternion.setFromAxisAngle(
+  //   new THREE.Vector3(0, mouse.x, 0),
+  //   rotationSpeed
+  // );
+  // cameraRotation.slerp(targetQuaternion, 0.1);
 
   // Update the raycaster with the mouse position
   var raycaster = new THREE.Raycaster();
@@ -223,6 +262,8 @@ function onDocumentMouseMove(event) {
     'planeLokapos1',
     'planeLokapos2',
     'planeLokapos3',
+    'planeQlola1',
+    'planeQlola2',
   ].includes(intersect.object.name));
 
   if (intersectedObjects.length > 0) {
@@ -290,7 +331,6 @@ function animate() {
 
   if (moon) {
     moon.rotation.y += 0.001;
-    moon.rotation.x += 0.001;
   }
 
 	renderer.render( scene, camera );
