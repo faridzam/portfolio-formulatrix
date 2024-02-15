@@ -48,35 +48,35 @@ function init() {
   // lokapos
   const geometryProjects = new THREE.PlaneGeometry(3.2, 1.8);
 
-  const textureLokaposAdmin1 = new THREE.TextureLoader().load('/images/lokapos-admin/admin_panel_login.jpeg');
+  const textureLokaposAdmin1 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/lokapos-admin/admin_panel_login.jpeg`);
   const materialLokaposAdmin1 = new THREE.MeshBasicMaterial({map:textureLokaposAdmin1});
   const planeLokaposAdmin1 = new THREE.Mesh( geometryProjects, materialLokaposAdmin1 );
   scene.add(planeLokaposAdmin1);
   planeLokaposAdmin1.position.set(3, -1, -2);
   planeLokaposAdmin1.name = 'planeLokaposAdmin1';
   
-  const textureLokaposAdmin2 = new THREE.TextureLoader().load('/images/lokapos-admin/admin_panel_dashboard.jpeg');
+  const textureLokaposAdmin2 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/lokapos-admin/admin_panel_dashboard.jpeg`);
   const materialLokaposAdmin2 = new THREE.MeshBasicMaterial({map:textureLokaposAdmin2});
   const planeLokaposAdmin2 = new THREE.Mesh( geometryProjects, materialLokaposAdmin2 );
   scene.add(planeLokaposAdmin2);
   planeLokaposAdmin2.position.set(3+3.5, -1, -2);
   planeLokaposAdmin2.name = 'planeLokaposAdmin2';
 
-  const textureLokapos1 = new THREE.TextureLoader().load('/images/lokapos/pos_login.jpeg');
+  const textureLokapos1 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/lokapos/pos_login.jpeg`);
   const materialLokapos1 = new THREE.MeshBasicMaterial({map:textureLokapos1});
   const planeLokapos1 = new THREE.Mesh( geometryProjects, materialLokapos1 );
   scene.add(planeLokapos1);
   planeLokapos1.position.set(3, -3, -2);
   planeLokapos1.name = 'planeLokapos1';
   
-  const textureLokapos2 = new THREE.TextureLoader().load('/images/lokapos/pos_input_deposit.jpeg');
+  const textureLokapos2 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/lokapos/pos_input_deposit.jpeg`);
   const materialLokapos2 = new THREE.MeshBasicMaterial({map:textureLokapos2});
   const planeLokapos2 = new THREE.Mesh( geometryProjects, materialLokapos2 );
   scene.add(planeLokapos2);
   planeLokapos2.position.set(3+3.5, -3, -2);
   planeLokapos2.name = 'planeLokapos2';
   
-  const textureLokapos3 = new THREE.TextureLoader().load('/images/lokapos/pos_home.jpeg');
+  const textureLokapos3 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/lokapos/pos_home.jpeg`);
   const materialLokapos3 = new THREE.MeshBasicMaterial({map:textureLokapos3});
   const planeLokapos3 = new THREE.Mesh( geometryProjects, materialLokapos3 );
   scene.add(planeLokapos3);
