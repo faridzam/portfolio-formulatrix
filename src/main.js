@@ -100,6 +100,116 @@ function init() {
   planeQlola2.position.set(-4.5, -2.2, 0);
   planeQlola2.name = 'planeQlola2';
   
+  const geometryQlola3 = new THREE.PlaneGeometry(4, 11.7);
+  const textureQlola3 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/qlola/giro-form.jpg`);
+  const materialQlola3 = new THREE.MeshBasicMaterial({map:textureQlola3});
+  const planeQlola3 = new THREE.Mesh( geometryQlola3, materialQlola3 );
+  scene.add(planeQlola3);
+  planeQlola3.position.set(-9, 0, 0);
+  planeQlola3.name = 'planeQlola3';
+
+  // qlola-admin
+  const geometryQlolaAdmin1 = new THREE.PlaneGeometry(4, 9/4);
+  const textureQlolaAdmin1 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/qlola-admin/admin-home.jpg`);
+  const materialQlolaAdmin1 = new THREE.MeshBasicMaterial({map:textureQlolaAdmin1});
+  const planeQlolaAdmin1 = new THREE.Mesh( geometryQlolaAdmin1, materialQlolaAdmin1 );
+  scene.add(planeQlolaAdmin1);
+  planeQlolaAdmin1.position.set(-13.5, 5, 0);
+  planeQlolaAdmin1.name = 'planeQlolaAdmin1';
+  
+  const geometryQlolaAdmin2 = new THREE.PlaneGeometry(4, 3.33);
+  const textureQlolaAdmin2 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/qlola-admin/admin-kurs-pairing.jpg`);
+  const materialQlolaAdmin2 = new THREE.MeshBasicMaterial({map:textureQlolaAdmin2});
+  const planeQlolaAdmin2 = new THREE.Mesh( geometryQlolaAdmin2, materialQlolaAdmin2 );
+  scene.add(planeQlolaAdmin2);
+  planeQlolaAdmin2.position.set(-13.5, 2, 0);
+  planeQlolaAdmin2.name = 'planeQlolaAdmin2';
+  
+  const geometryQlolaAdmin3 = new THREE.PlaneGeometry(4, 3.2);
+  const textureQlolaAdmin3 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/qlola-admin/admin-dplk-management.jpg`);
+  const materialQlolaAdmin3 = new THREE.MeshBasicMaterial({map:textureQlolaAdmin3});
+  const planeQlolaAdmin3 = new THREE.Mesh( geometryQlolaAdmin3, materialQlolaAdmin3 );
+  scene.add(planeQlolaAdmin3);
+  planeQlolaAdmin3.position.set(-13.5, -1.5, 0);
+  planeQlolaAdmin3.name = 'planeQlolaAdmin3';
+  
+  const geometryQlolaAdmin4 = new THREE.PlaneGeometry(4, 15.38);
+  const textureQlolaAdmin4 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/qlola-admin/admin-performance-monitoring.jpg`);
+  const materialQlolaAdmin4 = new THREE.MeshBasicMaterial({map:textureQlolaAdmin4});
+  const planeQlolaAdmin4 = new THREE.Mesh( geometryQlolaAdmin4, materialQlolaAdmin4 );
+  scene.add(planeQlolaAdmin4);
+  planeQlolaAdmin4.position.set(-18, -2, 0);
+  planeQlolaAdmin4.name = 'planeQlolaAdmin4';
+
+
+  // salokapark
+  const geometrySaloka1 = new THREE.PlaneGeometry(4, 11.4);
+  const textureSaloka1 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/salokapark/salokapark.jpg`);
+  const materialSaloka1 = new THREE.MeshBasicMaterial({map:textureSaloka1});
+  const planeSaloka1 = new THREE.Mesh( geometrySaloka1, materialSaloka1 );
+  scene.add(planeSaloka1);
+  planeSaloka1.position.set(4.5, 2, 0);
+  planeSaloka1.name = 'planeSaloka1';
+  
+  const geometrySaloka2 = new THREE.PlaneGeometry(4, 9/4);
+  const textureSaloka2 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/salokapark/salokapark-tiket.jpg`);
+  const materialSaloka2 = new THREE.MeshBasicMaterial({map:textureSaloka2});
+  const planeSaloka2 = new THREE.Mesh( geometrySaloka2, materialSaloka2 );
+  scene.add(planeSaloka2);
+  planeSaloka2.position.set(4.5, -5, 0);
+  planeSaloka2.name = 'planeSaloka2';
+  
+  const geometrySaloka3 = new THREE.PlaneGeometry(4, 9/4);
+  const textureSaloka3 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/salokapark/salokapark-tiket-1.jpg`);
+  const materialSaloka3 = new THREE.MeshBasicMaterial({map:textureSaloka3});
+  const planeSaloka3 = new THREE.Mesh( geometrySaloka3, materialSaloka3 );
+  scene.add(planeSaloka3);
+  planeSaloka3.position.set(9, -0.5, 0);
+  planeSaloka3.name = 'planeSaloka3';
+  
+  const geometrySaloka4 = new THREE.PlaneGeometry(4, 9/4);
+  const textureSaloka4 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/salokapark/salokapark-tiket-2.jpg`);
+  const materialSaloka4 = new THREE.MeshBasicMaterial({map:textureSaloka4});
+  const planeSaloka4 = new THREE.Mesh( geometrySaloka4, materialSaloka4 );
+  scene.add(planeSaloka4);
+  planeSaloka4.position.set(9, -3, 0);
+  planeSaloka4.name = 'planeSaloka4';
+  
+  const geometrySaloka5 = new THREE.PlaneGeometry(4, 9/4);
+  const textureSaloka5 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/salokapark/salokapark-tiket-3.jpg`);
+  const materialSaloka5 = new THREE.MeshBasicMaterial({map:textureSaloka5});
+  const planeSaloka5 = new THREE.Mesh( geometrySaloka5, materialSaloka5 );
+  scene.add(planeSaloka5);
+  planeSaloka5.position.set(9, -5.5, 0);
+  planeSaloka5.name = 'planeSaloka5';
+
+  // quadra
+
+  const geometryQuadra1 = new THREE.PlaneGeometry(4, 9/4);
+  const textureQuadra1 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/quadra/quadra-login.jpg`);
+  const materialQuadra1 = new THREE.MeshBasicMaterial({map:textureQuadra1});
+  const planeQuadra1 = new THREE.Mesh( geometryQuadra1, materialQuadra1 );
+  scene.add(planeQuadra1);
+  planeQuadra1.position.set(9, 7, 0);
+  planeQuadra1.name = 'planeQuadra1';
+  
+  const geometryQuadra2 = new THREE.PlaneGeometry(4, 9/4);
+  const textureQuadra2 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/quadra/quadra-overtime.jpg`);
+  const materialQuadra2 = new THREE.MeshBasicMaterial({map:textureQuadra2});
+  const planeQuadra2 = new THREE.Mesh( geometryQuadra2, materialQuadra2 );
+  scene.add(planeQuadra2);
+  planeQuadra2.position.set(9, 4.5, 0);
+  planeQuadra2.name = 'planeQuadra2';
+  
+  const geometryQuadra3 = new THREE.PlaneGeometry(4, 9/4);
+  const textureQuadra3 = new THREE.TextureLoader().load(`${import.meta.env.VITE_BASE_URL}/images/quadra/quadra-timesheet.jpg`);
+  const materialQuadra3 = new THREE.MeshBasicMaterial({map:textureQuadra3});
+  const planeQuadra3 = new THREE.Mesh( geometryQuadra3, materialQuadra3 );
+  scene.add(planeQuadra3);
+  planeQuadra3.position.set(9, 2, 0);
+  planeQuadra3.name = 'planeQuadra3';
+  
+  
   
   // object (cube)
   // const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
@@ -264,6 +374,19 @@ function onDocumentMouseMove(event) {
     'planeLokapos3',
     'planeQlola1',
     'planeQlola2',
+    'planeQlola3',
+    'planeQlolaAdmin1',
+    'planeQlolaAdmin2',
+    'planeQlolaAdmin3',
+    'planeQlolaAdmin4',
+    'planeSaloka1',
+    'planeSaloka2',
+    'planeSaloka3',
+    'planeSaloka4',
+    'planeSaloka5',
+    'planeQuadra1',
+    'planeQuadra2',
+    'planeQuadra3',
   ].includes(intersect.object.name));
 
   if (intersectedObjects.length > 0) {
