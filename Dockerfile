@@ -26,7 +26,7 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-FROM busybox:1.35
+FROM busybox:latest
 RUN adduser -D static
 USER static
 WORKDIR /home/static
