@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      # run: docker build . --file Dockerfile --tag web-portfolio:$(date +%s)
+      run: | 
+        echo ---Building and starting up docker---
+        docker-compose -f ./portfolio-formulatrix/docker-compose.test.yml -p testing up -d
+        echo ---Containers up---
