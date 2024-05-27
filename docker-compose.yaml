@@ -3,4 +3,4 @@ services:
   react_web:
     build: .
     ports:
-      - 3000:80
+      - 127.0.0.1:443:443
