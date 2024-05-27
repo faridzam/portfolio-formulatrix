@@ -10,6 +10,11 @@ COPY . .
 
 RUN npm run build
 
-EXPOSE 3000
+RUN apt-get update
+RUN apt-get install nginx -y
 
-CMD ["npm", "run", "preview"]
+COPY --from=dist /app/dist /var/www/html/
+
+EXPOSE 80
+
+CMD ["nginx","-g","daemon off;"]
