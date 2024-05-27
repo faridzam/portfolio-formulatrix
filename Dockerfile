@@ -1,4 +1,4 @@
-FROM node:20-buster as build
+FROM node:20-alpine as build
 
 WORKDIR /app
 
@@ -13,7 +13,7 @@ RUN npm run build
 RUN apt-get update
 RUN apt-get install nginx -y
 
-COPY --from=build /app/dist /var/www/html/
+COPY --from=build dist /var/www/html/
 
 EXPOSE 80
 
