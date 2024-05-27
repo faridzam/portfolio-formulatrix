@@ -15,8 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      # run: docker build . --file Dockerfile --tag web-portfolio:$(date +%s)
-      run: | 
-        echo ---Building and starting up docker---
-        docker-compose -f ~/project/threejs/portfolio-formulatrix/docker-compose.yaml -p testing up -d
-        echo ---Containers up---
+      run: docker build . --file Dockerfile --tag web-portfolio:$(date +%s)
+      # run: | 
+      #   echo ---Building and starting up docker---
+      #   docker-compose -f ~/project/threejs/portfolio-formulatrix/docker-compose.yaml -p testing up -d
+      #   echo ---Containers up---
