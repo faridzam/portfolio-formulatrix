@@ -5,9 +5,9 @@
   "description": "",
   "main": "src/main.js",
   "scripts": {
-    "dev": "vite --port 443 --strictPort",
+    "dev": "vite --port 3000 --strictPort",
     "build": "vite build",
-    "preview": "vite preview --port 443 --strictPort",
+    "preview": "vite preview --port 3000 --strictPort",
     "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
