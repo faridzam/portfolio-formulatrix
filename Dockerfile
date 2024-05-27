@@ -13,7 +13,7 @@ RUN npm run build
 RUN apt-get update
 RUN apt-get install nginx -y
 
-COPY --from=dist /app/dist /var/www/html/
+COPY --from=build /app/dist /var/www/html/
 
 EXPOSE 80
 
